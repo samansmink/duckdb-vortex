@@ -15,6 +15,9 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Corrosion)
 
+set(DCMAKE_OSX_DEPLOYMENT_TARGET 12.0)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -ftls-model=global-dynamic")
+
 if (APPLE)
     find_library(SECURITY_FRAMEWORK Security)
     find_library(CORE_FOUNDATION_FRAMEWORK CoreFoundation)
